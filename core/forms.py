@@ -65,30 +65,29 @@ class DepositForm(forms.ModelForm):
 
 
 class WithdrawalForm(forms.ModelForm):
+    WITHDRAWAL_METHOD_CHOICES = [
+        ('crypto', 'Cryptocurrency'),
+        ('bank', 'Bank Transfer'),
+    ]
+
+    withdrawal_method = forms.ChoiceField(choices=WITHDRAWAL_METHOD_CHOICES, required=True)
+    account_number = forms.CharField(max_length=20, required=False)
+    bank_name = forms.CharField(max_length=100, required=False)
+
     class Meta:
         model = Withdrawal
-        fields = ['crypto_coin', 'amount', 'destination_address']
-        widgets = {
-            'crypto_coin': forms.Select(attrs={'class': 'form-control'}),
-            'amount': forms.NumberInput(attrs={'step': '0.00000001', 'class': 'form-control'}),
-            'destination_address': forms.TextInput(attrs={'class': 'form-control'}),
-        }
+        fields = ['crypto_coin', 'amount', 'destination_address', 'withdrawal_method', 'account_number', 'bank_name']
 
     def clean(self):
         cleaned_data = super().clean()
-        amount = cleaned_data.get('amount')
-        destination_address = cleaned_data.get('destination_address')
+        method = cleaned_data.get('withdrawal_method')
+        account_number = cleaned_data.get('account_number')
+        bank_name = cleaned_data.get('bank_name')
 
-        # Validate that the destination address is provided
-        if not destination_address:
-            raise forms.ValidationError("Destination address is required.")
-
-        # Validate that the withdrawal amount is positive
-        if amount <= 0:
-            raise forms.ValidationError("Withdrawal amount must be greater than zero.")
-
+        if method == 'bank':
+            if not account_number or not bank_name:
+                raise forms.ValidationError("Account number and bank name are required for bank transfers.")
         return cleaned_data
-
 
 class TradeSearchForm(forms.Form):
     trade_id = forms.CharField(max_length=30, label='Trade ID', widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter Trade ID'}))

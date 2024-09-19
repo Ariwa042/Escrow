@@ -87,15 +87,21 @@ class Deposit(models.Model):
 
 
 class Withdrawal(models.Model):
+    WITHDRAWAL_METHOD_CHOICES = [
+        ('crypto', 'Cryptocurrency'),
+        ('bank', 'Bank Transfer'),
+    ]
+
     withdraw_id = ShortUUIDField(unique=True, length=10, max_length=15)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    crypto_coin = models.ForeignKey(Cryptocoin, on_delete=models.CASCADE)
+    crypto_coin = models.ForeignKey(Cryptocoin, on_delete=models.CASCADE, null=True, blank=True)
     amount = models.DecimalField(max_digits=20, decimal_places=8)
-    destination_address = models.CharField(max_length=255)
+    destination_address = models.CharField(max_length=255, null=True, blank=True)
+    account_number = models.CharField(max_length=20, null=True, blank=True)
+    bank_name = models.CharField(max_length=100, null=True, blank=True)
+    withdrawal_method = models.CharField(max_length=10, choices=WITHDRAWAL_METHOD_CHOICES, null=True)
     created_at = models.DateTimeField(default=timezone.now)
-    status = models.CharField(max_length=20,
-                              choices=STATUS_CHOICES,
-                              default='PENDING')
+    status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='PENDING')
 
     def __str__(self):
         return f"Withdrawal of {self.amount} {self.crypto_coin} by {self.user.username} ({self.status})"
