@@ -213,9 +213,12 @@ a.btn.btn-secondary {
     font-size: 2rem;
     font-family: system-ui;
 }
-.pending-trades { color: #3182ce; }
-.active-trades { color: #3182ce; }
-.completed-trades { color: #38a169; }
+.pending-trades { color: ghostwhite;
+                font-weight: 600}
+.active-trades { color: ghostwhite;
+               font-weight: 600;}
+.completed-trades { color: ghostwhite; 
+                  font-weight: 600;}
 
 
 button.btn.btn-transaction {
@@ -228,6 +231,7 @@ button.btn.btn-transaction {
     border-radius: 5px;
     transition: background-color 0.3s ease, transform 0.3s ease;
     border-radius: 20px;
+    font-weight: 600;
 }
 button.btn.btn-trade {
     display: inline-block;
@@ -239,6 +243,8 @@ button.btn.btn-trade {
     border-radius: 5px;
     transition: background-color 0.3s ease, transform 0.3s ease;
     border-radius: 20px;
+    color:ghostwhite;
+    font-weight: 600;
 }
 /* Specific styling for each button */
 a.btn-link {
