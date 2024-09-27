@@ -20,7 +20,7 @@ load_dotenv()  # This loads environment variables from a .env file
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-BASE_URL = 'https://1af136c8-98f5-437f-9d2e-172b94dd440f-00-15ogll9bpohcx.riker.replit.dev'
+BASE_URL = 'https://escrowtrade.onrender.com'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
@@ -29,7 +29,7 @@ BASE_URL = 'https://1af136c8-98f5-437f-9d2e-172b94dd440f-00-15ogll9bpohcx.riker.
 SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', 'replace-this-with-your-secret-key')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
