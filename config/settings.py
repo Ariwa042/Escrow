@@ -153,13 +153,14 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# Email configuration
+# Email settings
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'jo37288997@gmail.com'  # Replace with your Gmail address
-EMAIL_HOST_PASSWORD = 'upfl lxyl fsah shha'  # Your Gmail app password
+EMAIL_HOST_USER = 'escrowtrade02@gmail.com'  # Replace with your Gmail address
+EMAIL_HOST_PASSWORD = 'lkeb fkzs dofo qxtp'  # Your Gmail app password
+
 
 # Jazzmin settings
 JAZZMIN_SETTINGS = {
