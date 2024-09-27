@@ -17,19 +17,19 @@ from dotenv import load_dotenv
 
 load_dotenv()  # This loads environment variables from a .env file
 
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-BASE_URL = 'https://1af136c8-98f5-437f-9d2e-172b94dd440f-00-15ogll9bpohcx.riker.replit.dev'
+BASE_URL = 'https://escrowtrade.onrender.com'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', 'replace-this-with-your-secret-key')
+SECRET_KEY = os.getenv('DJANGO_SECRET_KEY',
+                       'replace-this-with-your-secret-key')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -87,18 +87,18 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 # Replace the DATABASES section of your settings.py with this
 DATABASES = {
-  'default': {
-    'ENGINE': 'django.db.backends.postgresql',
-    'NAME': getenv('PGDATABASE'),
-    'USER': getenv('PGUSER'),
-    'PASSWORD': getenv('PGPASSWORD'),
-    'HOST': getenv('PGHOST'),
-    'PORT': getenv('PGPORT', 5432),
-    'OPTIONS': {
-      'sslmode': 'require',
-    },
-    'DISABLE_SERVER_SIDE_CURSORS': True,
-  }
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': getenv('PGDATABASE'),
+        'USER': getenv('PGUSER'),
+        'PASSWORD': getenv('PGPASSWORD'),
+        'HOST': getenv('PGHOST'),
+        'PORT': getenv('PGPORT', 5432),
+        'OPTIONS': {
+            'sslmode': 'require',
+        },
+        'DISABLE_SERVER_SIDE_CURSORS': True,
+    }
 }
 
 # Password validation
@@ -106,16 +106,20 @@ DATABASES = {
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        'NAME':
+        'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'NAME':
+        'django.contrib.auth.password_validation.MinimumLengthValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        'NAME':
+        'django.contrib.auth.password_validation.CommonPasswordValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        'NAME':
+        'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
 
@@ -137,12 +141,12 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),  # Ensure this points to your development static files
+    os.path.join(
+        BASE_DIR,
+        'static'),  # Ensure this points to your development static files
 ]
 
-
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
 
 MEDIA_URL = '/media/'
 
@@ -160,7 +164,6 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'escrowtrade02@gmail.com'  # Replace with your Gmail address
 EMAIL_HOST_PASSWORD = 'lkeb fkzs dofo qxtp'  # Your Gmail app password
-
 
 # Jazzmin settings
 JAZZMIN_SETTINGS = {
