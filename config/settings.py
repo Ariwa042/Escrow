@@ -39,7 +39,6 @@ AUTH_USER_MODEL = 'account.User'
 
 # Application definition
 INSTALLED_APPS = [
-    'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -166,12 +165,4 @@ EMAIL_HOST_USER = 'escrowtrade02@gmail.com'  # Replace with your Gmail address
 EMAIL_HOST_PASSWORD = 'lkeb fkzs dofo qxtp'  # Your Gmail app password
 
 # Jazzmin settings
-JAZZMIN_SETTINGS = {
-    'site_title': 'Escrowswap',
-    "site_header": "Escrow admin",
-    "theme": 'darkly',
-    "site_url": BASE_URL,
-    'dark_mode_theme': "darkly",
-    'use_dark_mode': True,
-    'dark_mode_theme_color': "dark",
-}
+
