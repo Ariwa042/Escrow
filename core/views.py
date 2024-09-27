@@ -78,7 +78,7 @@ def deposit_instructions(request):
             user=request.user,
             crypto_coin=crypto_coin,
             amount=amount,
-            qr_code=qr_code,
+            #qr_code=qr_code,
             # Add additional fields if needed
         )
         # Clear session data

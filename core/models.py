@@ -41,9 +41,9 @@ ROLE_CHOICES = [
 
 
 class Cryptocoin(models.Model):
-    name = models.CharField(max_length=100)
+    name = models.CharField(max_length=None)
     symbol = models.CharField(max_length=10, unique=True)
-    wallet_address = models.CharField(max_length=255)
+    wallet_address = models.CharField(max_length=None)
     logo = models.ImageField(upload_to='cryptocoins/', null=True, blank=True)
 
 
