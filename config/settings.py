@@ -29,9 +29,9 @@ SECRET_KEY = os.getenv('DJANGO_SECRET_KEY',
                        'replace-this-with-your-secret-key')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['www.escrowtrade.onrender.com', 'escrowtrade.onrender.com']
 
 CSRF_TRUSTED_ORIGINS = [BASE_URL]
 
