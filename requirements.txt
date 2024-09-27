@@ -20,6 +20,7 @@ qrcode==7.4.2
 requests==2.32.3
 requests-oauthlib==2.0.0
 rsa==4.9
+whitenoise
 shortuuid==1.0.13
 uritemplate==4.1.1
 urllib3==2.2.2
