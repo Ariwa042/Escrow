@@ -87,10 +87,10 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': escrowdb,
-        'USER': escrowdb_owner,
-        'PASSWORD': Gyfkph3MlxA8,
-        'HOST': ep-little-river-a2hcid5q.eu-central-1.aws.neon.tech,
+        'NAME': 'escrowdb',
+        'USER': 'escrowdb_owner',
+        'PASSWORD': 'Gyfkph3MlxA8',
+        'HOST': 'ep-little-river-a2hcid5q.eu-central-1.aws.neon.tech',
         'PORT': 5432
         'OPTIONS': {
             'sslmode': 'require',
