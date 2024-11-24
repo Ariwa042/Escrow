@@ -19,7 +19,7 @@ load_dotenv()  # This loads environment variables from a .env file
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-BASE_URL = 'https://escrowtrade.onrender.com'
+BASE_URL = 'https://escrow-trade.onrender.com'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
@@ -30,7 +30,7 @@ SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['escrowtrade.onrender.com', 'www.escrowtrade.onrender.com']
+ALLOWED_HOSTS = ['escrow-trade.onrender.com','escrowtrade.site', 'www.escrow-trade.onrender.com']
 
 CSRF_TRUSTED_ORIGINS = [BASE_URL]
 
