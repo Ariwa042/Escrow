@@ -25,7 +25,7 @@ BASE_URL = 'https://escrow-trade.onrender.com'
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
+SECRET_KEY = '5w5!86hnsccpm3c1zg2agjty25@^5rxjomj2#n-@gk&dyj8zi4'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -87,11 +87,11 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': getenv('PGDATABASE'),
-        'USER': getenv('PGUSER'),
-        'PASSWORD': getenv('PGPASSWORD'),
-        'HOST': getenv('PGHOST'),
-        'PORT': getenv('PGPORT', 5432),
+        'NAME': escrowdb,
+        'USER': escrowdb_owner,
+        'PASSWORD': Gyfkph3MlxA8,
+        'HOST': ep-little-river-a2hcid5q.eu-central-1.aws.neon.tech,
+        'PORT': 5432
         'OPTIONS': {
             'sslmode': 'require',
         },
